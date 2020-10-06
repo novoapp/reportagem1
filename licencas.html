@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>checando licensas</title>
+        
+        <style>
+            .content{
+                font-family: sans-serif, serif;
+                width: 100%;
+                text-align: center;
+            }
+            .msgs{
+                color: dimgrey;
+            }
+            #image{
+                width: 150px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="content">
+            <h3 class="msgs" id="msg">CALCULANDO O NÚMERO DE LICENÇAS</h3>
+            <br />
+            <img src="https://djivangross.com/md/images/appsniper/loading.gif" id="image">
+        </div>
+        
+        
+        <script type="text/javascript">
+        
+            $( document ).ready(function() {
+                
+                var i = 0;                
+                var arrSteps = ["RESTAM 6 LICENÇAS", "RESTAM 3 LICENÇAS", "SUA LICENÇA FOI RESERVADA COM SUCESSO!"];
+                
+                var steps = setInterval(function(){
+                    
+                    if (i == 4){
+                        clearInterval(steps);
+                        
+                        window.location.replace("https://www.google.com/"); 
+                    }
+                    
+                    $('#msg').text(arrSteps[i]);
+                    
+                    i++;                    
+                    
+                }, 2000);
+            });
+            
+        </script>
+    </body>
+</html>
